@@ -1,0 +1,22 @@
+*{margin:0px;padding:0px;}
+menu,ol,ul{padding:0 0 0 0px;list-style:none;list-style-image:none}nav ul,nav ol{list-style:none;list-style-image:none}
+.message_self{ background-color:#0f0;float:right;}
+.message_other{float:left;background-color:#fff;}
+.message_row{border-radius:3px;padding:10px 10px 10px 10px;margin-top:10px;margin-bottom:10px;max-width:65%;}
+.message_self_arrow{float:right;border-width:5px;margin-top:24px;border-color:#efefef #efefef #efefef #0f0;border-style:solid;}
+.message_other_arrow{float:left;border-width:5px;margin-top:24px;border-color:#efefef #fff #efefef #efefef;border-style:solid;}
+.clearFix:after{
+ clear:both;
+ display:block;
+ visibility:hidden;
+ height:0;
+ line-height:0; content:'';
+
+}
+.clearFix{zoom:1;} /*解决ie6/7兼容问题*/
+.message_sender {padding: 5 10px;width:375px;}
+.message_sender input{width:70%;}
+.messageContainer {width:375px;padding: 0px 10px 10px 10px; height:400px; background-color: #efefef}
+.messagelist .mTime{text-align:center;width:100%;float:left;margin-top:10px;}
+.messagelist .mTime span {margin-top:5px;text-align:center; font-size:10px; color:#fff; background-color:#bbb; padding: 5px; border-radius: 3px }
+.messagelist .avatar {width:40px; height:40px; border-radius: 3px; margin-top:10px;border-radius:3px;}

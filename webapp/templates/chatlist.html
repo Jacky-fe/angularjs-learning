@@ -1,0 +1,28 @@
+ <div class="messageContainer" slimscroll scroll-content="chatContent">  
+    <ul class="messagelist">
+        <li ng-repeat ='info in chatContent track by $index' class="clearFix">
+             <div class="mTime" ng-if="info.showTime"><span>{{info.showTime}}</span></div>
+             <img ng-src="{{info.avatar}}" class='{{info.from | getMessageClassName}} avatar'/>
+             <div class="{{info.from | getMessageClassName}}_arrow"></div>
+             <div class='message_row {{info.from | getMessageClassName}}' ng-bind-html='info.content'></div>
+        </li>
+  
+    </ul>   
+</div>
+<div class="message_sender">
+    <input type="text" ng-model='message' class='form-control col-sm-9' />
+    <button class="btn btn-default" ng-click="sendMessage()" >发送</button>
+    <button class="btn btn-default" onclick='var content = $(".message_sender [ng-model=message]")[0];
+            var info = {
+                        chatName : services.chatService.getCurrentChat(), //有可能是1对1，有可能是群聊id，或讨论组id
+                        from : "夜小Q", //有自己，他人 
+                        type : "text", //有text, image, link, video, expression（大表情）。text里还要注意处理自带表情和emoji表情
+                        content : content.value, //text这样，其他的json格式待定
+                    avatar : "images/avatar.jpg"
+                        
+                    };
+            if (info.content) {
+                services.chatService.processMessage(info);
+                content.value = "";
+            }' >接收</button>
+</div>
